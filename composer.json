@@ -1,6 +1,6 @@
 {
-  "name": "kuosin/wechat",
-  "description": "微信SDK魔改版，增加了分账回退查询接口",
+  "name": "overtrue/wechat",
+  "description": "微信SDK",
   "keywords": [
     "easywechat",
     "wechat",
@@ -11,8 +11,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "overtrue|Kuosin",
-      "email": "anzhengchao@gmail.com|191118032@qq.com"
+      "name": "overtrue",
+      "email": "anzhengchao@gmail.com"
     }
   ],
   "require": {
