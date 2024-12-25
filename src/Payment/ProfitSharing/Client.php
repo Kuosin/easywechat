@@ -248,4 +248,32 @@ class Client extends BaseClient
             $params
         );
     }
+
+
+    /**
+     * 查询分账回退结果
+     *
+     * @param string $outOrderNo 商户订单号
+     * @param string $outReturnNo 分账回退单号
+     *
+     * @return array 查询结果数组
+     *
+     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasyWeChat\Kernel\Exceptions\RuntimeException
+     */
+    public function returnShareQuery(
+        string $outOrderNo,
+        string $outReturnNo
+    ) {
+        $params = [
+            'appid' => $this->app['config']->app_id,
+            'out_order_no' => $outOrderNo,
+            'out_return_no' => $outReturnNo,
+        ];
+
+        return $this->safeRequest(
+            'pay/profitsharingreturnquery',
+            $params
+        );
+    }
 }
