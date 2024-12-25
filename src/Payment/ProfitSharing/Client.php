@@ -271,9 +271,56 @@ class Client extends BaseClient
             'out_return_no' => $outReturnNo,
         ];
 
-        return $this->safeRequest(
+        return $this->request(
             'pay/profitsharingreturnquery',
             $params
+        );
+    }
+
+    /**
+     * 发起自定义请求。
+     *
+     * @param string $url 请求的URL地址。
+     * @param array $params 请求参数数组。
+     * @return mixed 请求的结果。
+     */
+
+    public function requestCustom(
+        string $url,
+        array $params = [],
+        string $method = 'post',
+        array $options = [],
+        bool $returnResponse = false
+    ) {
+        return $this->request(
+            $url, 
+            $params,
+            $method,
+            $options,
+            $returnResponse
+        );
+    }
+    /**
+     * 安全请求自定义接口
+     *
+     * @param string $url 请求的URL地址
+     * @param array $params 请求参数数组
+     * @return mixed 返回请求的结果
+     *
+     * 该方法封装了一个安全的HTTP请求，用于向指定的URL发送请求并返回响应。
+     * 它内部调用了safeRequest方法，确保请求的安全性。
+     */
+    public function safeRequestCustom(
+        string $url,
+        array $params,
+        string $method = 'post',
+        array $options = []
+    ) {
+        return $this->safeRequest(
+            $url, 
+            $params,
+            $method,
+            $options
         );
     }
 }
